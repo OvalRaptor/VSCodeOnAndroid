@@ -1,2 +1,61 @@
-# VSCodeOnAndroid
-An easy way to install VS Code on your android device
+# Visual Studio Code On Android
+
+![1000123297](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/98a3a2ad-589f-4249-a80c-1c0433beca11)
+
+
+
+This repository makes it simple to run Visual Studio Code on your android device. I've used code server to localhost a version of vscode.dev and connect via a web application to make a more native like experience. This removes the extension limitations vscode.dev creates and also allows you to open local folders from your device, exactly how vscode.dev should have been created.
+
+Whether you have internet access or not you will still be able to use visual studio code on your device.
+
+# Requirements:
+
+1. An Android device
+2. Termux application
+3. Visual Studio Code Application
+4. A brain :)
+
+## How to install:
+
+1. Install the latest termux application from the GitHub repository and allow notifications.
+```
+https://github.com/termux/termux-app
+```
+2. Update and upgrade termux packages and link your internal storage to Termux.
+```
+apt update; apt upgrade; termux-setup-storage
+```
+3. Next update again and install the git package
+```
+apt update && apt install git
+```
+4. Clone the VSCodeOnAndroid repository
+```
+git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git
+```
+5. Start the installation script
+```
+cd VSCodeOnAndroid; chmod +x install.sh; ./install.sh
+```
+Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. To stop the server press Ctrl + C and then type 'exit' and press enter, however you should be fine to keep this running in the background for ease of access to the web app.
+
+6. Install vscode.apk from releases, when installing a prompt will appear to say the application might contain malware, ignore this and proceed to install (I'm too lazy to figure out why the app is false flagging). If you have any doubts please feel free to scan the apk yourself.
+
+# Extensions
+
+Some extensions may not be avaliable to install through code server such as live server. To get around this use open vsx to download the .vsix extensions.
+
+https://open-vsx.org/
+
+You can then install these extensions by following the video below:
+
+![1000123311](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/8db3942c-44fc-4559-af9d-b0b7383be45a)
+
+
+That's it, have fun! :)
+
+# Credits
+
+Custom Bashrc - https://github.com/knightfall-cs/termux-bashrc (KnightFall)
+
+Code server - https://github.com/coder/code-server (Coder)
