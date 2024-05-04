@@ -1,6 +1,7 @@
 # Visual Studio Code On Android
 
-![1000123297](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/98a3a2ad-589f-4249-a80c-1c0433beca11)
+![1000123297](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/02502d8f-0c59-4940-9bca-c0ebf4506b64)
+
 
 
 
@@ -49,7 +50,8 @@ https://open-vsx.org/
 
 You can then install these extensions by following the video below:
 
-![1000123311](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/8db3942c-44fc-4559-af9d-b0b7383be45a)
+![1000123311](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/47428b29-8aab-461b-9f65-49ab6dc65d7f)
+
 
 
 That's it, have fun! :)
