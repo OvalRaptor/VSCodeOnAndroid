@@ -14,7 +14,6 @@ Whether you have internet access or not you will still be able to use visual stu
 1. An Android device
 2. Termux application
 3. Visual Studio Code Application
-4. A brain :)
 
 ## How to install:
 
