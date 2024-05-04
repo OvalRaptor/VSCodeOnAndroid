@@ -18,9 +18,9 @@ Whether you have internet access or not you will still be able to use visual stu
 ## How to install:
 
 1. Install the latest termux application from the GitHub repository and allow notifications.
-```
+
 https://github.com/termux/termux-app
-```
+
 2. Update and upgrade termux packages and link your internal storage to Termux.
 ```
 apt update; apt upgrade; termux-setup-storage
