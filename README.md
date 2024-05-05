@@ -37,9 +37,9 @@ git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git
 ```
 cd VSCodeOnAndroid; chmod +x install.sh; ./install.sh
 ```
-Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. To stop the server press Ctrl + C and then type 'exit' and press enter, however you should be fine to keep this running in the background for ease of access to the web app.
+Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal, press Ctrl + C and then type 'exit'.
 
-6. Install vscode.apk from releases, when installing a prompt will appear to say the application might contain malware, ignore this and proceed to install (I'm too lazy to figure out why the app is false flagging). If you have any doubts please feel free to scan the apk yourself.
+6. Install vscode.apk from releases.
 
 # Extensions
 
