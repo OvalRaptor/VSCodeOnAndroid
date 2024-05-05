@@ -5,7 +5,7 @@
 
 
 
-This repository makes it simple to run Visual Studio Code on your android device. I've used code server to localhost a version of vscode.dev and connect via a web application to make a more native like experience. This removes the extension limitations vscode.dev creates and also allows you to open local folders from your device, exactly how vscode.dev should have been created.
+This repository makes it simple to run Visual Studio Code on your android device. I've used code server and a web application to make a more native like experience. This removes the extension limitations vscode.dev creates and also allows you to open local folders from your device, exactly how vscode.dev should have been created.
 
 Whether you have internet access or not you will still be able to use visual studio code on your device.
 
