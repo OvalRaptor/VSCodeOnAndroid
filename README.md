@@ -16,8 +16,46 @@ While Code Server supports most VS Code extensions, some may not work properly d
 # Requirements:
 
 1. An Android device
-2. Termux application
-3. Visual Studio Code Application
+2. 5GB of free storage
+3. Termux application
+4. Visual Studio Code Application
+
+# Support
+
+## Programming Languages:
+
+C/C++: With build-essential and gdb for building and debugging.
+
+Python: Both python (Python 3.x) and python2 (Python 2.x) are included.
+
+Node.js: For JavaScript and server-side development.
+
+Java: openjdk-17 for Java applications.
+
+PHP: For server-side scripting.
+
+Ruby: Along with bundler for managing Ruby gems.
+
+Go (Golang): For Go language development.
+
+Rust: For Rust language development.
+
+## Databases:
+
+MariaDB: A community-developed fork of MySQL.
+
+PostgreSQL: An advanced open-source relational database.
+
+MongoDB: A NoSQL database for working with large-scale document data.
+
+## Other Tools:
+
+Yarn: A package manager for Node.js projects.
+
+Ripgrep: A search tool used by VSCode.
+
+Git: For version control and collaboration.
+
 
 ## How to install:
 
