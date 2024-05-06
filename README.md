@@ -79,7 +79,7 @@ git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git
 ```
 cd VSCodeOnAndroid; chmod +x install.sh; ./install.sh
 ```
-Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal, press Ctrl + C and then type 'exit'.
+Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal and type 'stop'.
 
 6. Install vscode.apk from releases.
 
