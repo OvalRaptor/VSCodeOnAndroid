@@ -34,9 +34,11 @@ mysql_install_db
 initdb ~/../usr/var/lib/postgresql
 
 # Add Keyboard Shortcuts to Code Server
+echo -e "\033[34mAdding Keyboard Shortcuts...\033[0m"
+mkdir -p ~/.local/share/code-server/User
 echo '{
   "keyboard.dispatch": "keyCode"
-}' >> ~/.local/share/code-server/User/settings.json
+}' > ~/.local/share/code-server/User/settings.json
 
 
 # Install .bashrc in blue
