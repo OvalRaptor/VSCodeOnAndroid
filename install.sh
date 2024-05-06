@@ -13,4 +13,4 @@ initdb ~/../usr/var/lib/postgresql
 
 #Install Bashrc
 cd /data/data/com.termux/files/usr/etc && cp -v bash.bashrc $HOME/VSCodeOnAndroid/backup/ && cd -
-cp bash.bashrc /data/data/com.termux/files/usr/etc && echo -e "\033[32m Successfully installed. Restart Termux and type 'vs' to start code server. \033[0m"
+cp bash.bashrc /data/data/com.termux/files/usr/etc && echo -e "\033[32m Installation Script Complete. \033[0m"
