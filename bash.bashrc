@@ -168,6 +168,20 @@ n()
         rm -f "$NNN_TMPFILE" > /dev/null
     fi
 }
+# Start MariaDB
+if ! pgrep -x "mysqld" > /dev/null; then
+    mysqld_safe -u root &
+fi
+
+# Start PostgreSQL
+if ! pgrep -x "postgres" > /dev/null; then
+    pg_ctl -D ~/../usr/var/lib/postgresql start &
+fi
+
+# Start MongoDB
+if ! pgrep -x "mongod" > /dev/null; then
+    mongod --dbpath ~/../usr/var/lib/mongodb --logpath ~/../usr/var/log/mongodb/mongod.log --fork
+fi
 
 #### Display ########################
 
