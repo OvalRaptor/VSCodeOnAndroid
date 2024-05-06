@@ -33,6 +33,12 @@ echo -e "\033[34mConfiguring databases...\033[0m"
 mysql_install_db
 initdb ~/../usr/var/lib/postgresql
 
+# Add Keyboard Shortcuts to Code Server
+echo '{
+  "keyboard.dispatch": "keyCode"
+}' >> ~/.local/share/code-server/User/settings.json
+
+
 # Install .bashrc in blue
 echo -e "\033[34mInstalling .bashrc configuration...\033[0m"
 bashrc_path="/data/data/com.termux/files/usr/etc/bash.bashrc"
