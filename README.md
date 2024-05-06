@@ -73,7 +73,7 @@ apt update && apt upgrade -o Dpkg::Options::="--force-confnew" -y && termux-setu
 
 ```
 
-Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal and type 'stop'.
+Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone, however if you want to stop the server, open the termux terminal and type 'stop'.
 
 # Extensions
 
