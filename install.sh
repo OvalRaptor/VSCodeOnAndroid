@@ -25,7 +25,7 @@ fi
 # Proceed with the rest of the installations in blue
 echo -e "\033[34mInstalling code server and dependencies on Termux...\033[0m"
 apt-get update -y && apt-get upgrade -y
-apt-get install -y build-essential gdb python python2 nodejs openjdk-17 php ruby golang rust yarn ripgrep mariadb postgresql mongodb code-server
+apt-get install -y build-essential gdb python python2 nodejs openjdk-17 php ruby golang rust yarn ripgrep mariadb postgresql mongodb binutils pkg-config code-server
 gem install bundler
 
 # Configure Databases in blue
