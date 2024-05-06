@@ -9,10 +9,7 @@ gem install bundler
 
 #Configure Databases
 mysql_install_db
-mysqld_safe -u root &
 initdb ~/../usr/var/lib/postgresql
-pg_ctl -D ~/../usr/var/lib/postgresql start
-mongod --dbpath ~/../usr/var/lib/mongodb --logpath ~/../usr/var/log/mongodb/mongod.log --fork
 
 #Install Bashrc
 cd /data/data/com.termux/files/usr/etc && cp -v bash.bashrc $HOME/VSCodeOnAndroid/backup/ && cd -
