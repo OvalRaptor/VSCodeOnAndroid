@@ -5,9 +5,13 @@
 
 
 
-This repository makes it simple to run Visual Studio Code on your android device. I've used code server and a web application to make a more native like experience. This removes most of the extension limitations vscode.dev creates and also allows you to open local folders from your device.
+This repository makes it simple to run Visual Studio Code on your android device. Code server and a web application have been used to make a more native like experience. This removes most of the extension limitations vscode.dev creates on mobile, gives you the ability to use vscode offline and also allows you to open local folders from your device.
 
-Whether you have internet access or not you will still be able to use visual studio code on your device.
+# What is code server?
+
+Code Server is a tool that allows you to run Visual Studio Code (VS Code) on a remote server and access it through a web browser. It’s designed to provide the full VS Code experience, including support for extensions and direct terminal access, on any machine with a web browser, even those that cannot install VS Code natively, like tablets or Chromebooks.
+
+While Code Server supports most VS Code extensions, some may not work properly due to the remote environment. The big limitation is the inability of remote development using SSH and tunnels. 
 
 # Requirements:
 
