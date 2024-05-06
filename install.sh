@@ -3,7 +3,7 @@
 #Install Code Server
 echo -e "\033[32m Installing code server on Termux \033[0m"
 apt-get -y update
-apt-get -y install tur-repo build-essential gdb python python2 nodejs openjdk-17 php ruby golang rust git yarn ripgrep git mariadb postgresql
+apt-get -y install tur-repo build-essential gdb python python2 nodejs openjdk-17 php ruby golang rust yarn ripgrep git mariadb postgresql
 apt-get -y install mongodb code-server
 gem install bundler
 
