@@ -180,7 +180,7 @@ fi
 
 # Start MongoDB
 if ! pgrep -x "mongod" > /dev/null; then
-    mongod --dbpath /data/data/com.termux/files/usr/var/lib/mongodb > /data/data/com.termux/files/usr/var/lib/mongodb/mongod.log 2>&1 --fork
+    mongod --dbpath /data/data/com.termux/files/usr/var/lib/mongodb > /data/data/com.termux/files/usr/var/lib/mongodb/mongod.log 2>&1 &
 fi
 
 #### Display ########################
