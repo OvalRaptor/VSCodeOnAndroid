@@ -59,7 +59,7 @@ Git: For version control and collaboration.
 
 # How to install:
 
-1. Install the latest termux application from the GitHub repository and allow notifications.
+1. Install the latest termux application from the GitHub repository and allow Termux notifications.
 
    https://github.com/termux/termux-app
 
