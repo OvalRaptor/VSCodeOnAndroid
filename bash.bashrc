@@ -127,7 +127,7 @@ alias wget='wget -c '
 alias genpass='openssl rand -base64 12'
 alias phttp='python -m http.server 8000'
 alias kn='python /data/data/com.termux/files/home/keynote/keynote.py' # https://github.com/knightfall-cs/keynote
-alias vs="code-server --auth none & sleep 2;  am start --user 0 -n com.vscode/.SplashScreenActivity"
+alias vs='NODE_OPTIONS="--require /data/data/com.termux/files/home/VSCodeOnAndroid/android-as-linux.js" code-server --auth none & sleep 2;  am start --user 0 -n com.vscode/.SplashScreenActivity'
 alias stop='kill $(pgrep -f code-server)'
 
 #### Functions ########################
