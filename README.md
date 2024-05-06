@@ -77,7 +77,7 @@ Once the installation is complete exit termux by typing "exit" and press enter. 
 
 # Extensions
 
-Some extensions may not be avaliable to install through code server such as live server. To get around this use open vsx to download the .vsix extensions.
+Some extensions may not be compatible with android, even though they are installable, and will not work. To get around this try to find your extension on open vsx and download the .vsix.
 
 https://open-vsx.org/
 
