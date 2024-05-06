@@ -22,7 +22,7 @@ While Code Server supports most VS Code extensions, some may not work properly d
 
 # Support
 
-## Programming Languages:
+### Programming Languages:
 
 C/C++: With build-essential and gdb for building and debugging.
 
@@ -40,7 +40,7 @@ Go (Golang): For Go language development.
 
 Rust: For Rust language development.
 
-## Databases:
+### Databases:
 
 MariaDB: A community-developed fork of MySQL.
 
@@ -48,7 +48,7 @@ PostgreSQL: An advanced open-source relational database.
 
 MongoDB: A NoSQL database for working with large-scale document data.
 
-## Other Tools:
+### Other Tools:
 
 Yarn: A package manager for Node.js projects.
 
@@ -57,7 +57,7 @@ Ripgrep: A search tool used by VSCode.
 Git: For version control and collaboration.
 
 
-## How to install:
+# How to install:
 
 1. Install the latest termux application from the GitHub repository and allow notifications.
 
