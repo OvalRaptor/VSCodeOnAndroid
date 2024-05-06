@@ -63,25 +63,17 @@ Git: For version control and collaboration.
 
    https://github.com/termux/termux-app
 
-2. Update and upgrade termux packages and link your internal storage to Termux.
-```
-apt update; apt upgrade; termux-setup-storage
-```
-3. Next update again and install the git package
-```
-apt update && apt install git
-```
-4. Clone the VSCodeOnAndroid repository
-```
-git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git
-```
-5. Start the installation script
-```
-cd VSCodeOnAndroid; chmod +x install.sh; ./install.sh
-```
-Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal and type 'stop'.
+2. Install The Vscode.apk from the release tab.
 
-6. Install vscode.apk from releases.
+   https://github.com/OvalRaptor/VSCodeOnAndroid/releases
+   
+3. Copy the script below to begin the installation. Make sure you allow termux storage permission when it prompts you.
+```
+apt update && apt upgrade -o Dpkg::Options::="--force-confnew" -y && termux-setup-storage && sleep 5 && apt update && apt install git -y && git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git && cd VSCodeOnAndroid && chmod +x install.sh && ./install.sh
+
+```
+
+Once the installation is complete exit termux by typing "exit" and press enter. Re-open termux and type 'vs' to start the code server. The server can run in the background of your phone however if you want to stop the server open the termux terminal and type 'stop'.
 
 # Extensions
 
