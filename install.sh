@@ -41,6 +41,7 @@ echo '{
 }' > ~/.local/share/code-server/User/settings.json
 
 
+
 # Install .bashrc in blue
 echo -e "\033[34mInstalling .bashrc configuration...\033[0m"
 bashrc_path="/data/data/com.termux/files/usr/etc/bash.bashrc"
