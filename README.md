@@ -16,7 +16,7 @@ While Code Server supports most VS Code extensions, some may not work properly d
 # Requirements:
 
 1. An Android device
-2. 5GB of free storage
+2. A Minimum of 5GB free storage
 3. Termux application
 4. Visual Studio Code Application
 
