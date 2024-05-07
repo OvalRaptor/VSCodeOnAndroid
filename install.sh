@@ -242,12 +242,6 @@ else
 fi
 
 # Installation script complete message in blue
-echo -e "\033[34mInstallation script complete. Would you like to close the Termux session now? (y/n)\033[0m"
-read -p "Enter choice: " restart_choice
+echo -e "\033[34mInstallation script complete. Please type 'exit' and press Enter to close the Termux session.\033[0m"
 
-if [ "$restart_choice" = "y" ]; then
-    # Close the current Termux session
-    echo -e "\033[34mClosing the Termux session...\033[0m"
-    exit
-fi
 
