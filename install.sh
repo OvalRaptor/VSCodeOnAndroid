@@ -29,7 +29,10 @@ apt-get install -y build-essential gdb binutils pkg-config code-server
 
 # Define function to append database startup scripts to bash.bashrc
 append_to_bashrc() {
-    echo "$1" >> "$HOME/VSCodeOnAndroid/bash.bashrc"
+    # Use 'cat' with a heredoc to append multiline text
+    cat >> "$HOME/VSCodeOnAndroid/bash.bashrc" << EOF
+$1
+EOF
 }
 
 # Function to install C# related packages
@@ -102,7 +105,10 @@ install_mariadb() {
     echo -e "\033[34mInstalling MariaDB...\033[0m"
     apt-get install -y mariadb
     mysql_install_db
-    append_to_bashrc "# Start MariaDB\nif ! pgrep -x \"mysqld\" > /dev/null; then\n    mysqld_safe -u root &\nfi\n"
+    append_to_bashrc "# Start MariaDB
+if ! pgrep -x \"mysqld\" > /dev/null; then
+    mysqld_safe -u root &
+fi"
 }
 
 # Function to install PostgreSQL and append startup script to bash.bashrc
@@ -110,14 +116,20 @@ install_postgresql() {
     echo -e "\033[34mInstalling PostgreSQL...\033[0m"
     apt-get install -y postgresql
     initdb ~/../usr/var/lib/postgresql
-    append_to_bashrc "# Start PostgreSQL\nif ! pgrep -x \"postgres\" > /dev/null; then\n    pg_ctl -D ~/../usr/var/lib/postgresql start &\nfi\n"
+    append_to_bashrc "# Start PostgreSQL
+if ! pgrep -x \"postgres\" > /dev/null; then
+    pg_ctl -D ~/../usr/var/lib/postgresql start &
+fi"
 }
 
 # Function to install MongoDB and append startup script to bash.bashrc
 install_mongodb() {
     echo -e "\033[34mInstalling MongoDB...\033[0m"
     apt-get install -y mongodb
-    append_to_bashrc "# Start MongoDB\nif ! pgrep -x \"mongod\" > /dev/null; then\n    mongod --dbpath /data/data/com.termux/files/usr/var/lib/mongodb > /data/data/com.termux/files/usr/var/lib/mongodb/mongod.log 2>&1 &\nfi\n"
+    append_to_bashrc "# Start MongoDB
+if ! pgrep -x \"mongod\" > /dev/null; then
+    mongod --dbpath /data/data/com.termux/files/usr/var/lib/mongodb > /data/data/com.termux/files/usr/var/lib/mongodb/mongod.log 2>&1 &
+fi"
 }
 
 # Function to prompt the user for multiple language installations
@@ -230,11 +242,12 @@ else
 fi
 
 # Installation script complete message in blue
-echo -e "\033[34mInstallation script complete. Would you like to restart Termux now? (y/n)\033[0m"
+echo -e "\033[34mInstallation script complete. Would you like to close the Termux session now? (y/n)\033[0m"
 read -p "Enter choice: " restart_choice
 
 if [ "$restart_choice" = "y" ]; then
-    # Consider adding a command to restart Termux if possible
-    echo -e "\033[34mRestarting Termux...\033[0m"
-    # Restart command here
+    # Close the current Termux session
+    echo -e "\033[34mClosing the Termux session...\033[0m"
+    exit
 fi
+
