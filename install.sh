@@ -214,38 +214,6 @@ prompt_for_databases() {
         fi
     done
 }
-
-# Call the function to prompt for language installations
-prompt_for_languages
-
-# Call the function to prompt for database installations
-prompt_for_databases
-
-# Add Keyboard Shortcuts to Code Server
-echo -e "\033[34mAdding Keyboard Shortcuts...\033[0m"
-mkdir -p ~/.local/share/code-server/User
-echo '{
-  "keyboard.dispatch": "keyCode"
-}' > ~/.local/share/code-server/User/settings.json
-
-
-# Ensure the backup directory exists
-mkdir -p "$HOME/VSCodeOnAndroid/backup"
-
-# Check if the custom .bashrc exists before copying
-if [ -f "$HOME/VSCodeOnAndroid/bash.bashrc" ]; then
-    # Backup the current .bashrc file
-    cp -v "/data/data/com.termux/files/usr/etc/bash.bashrc" "$HOME/VSCodeOnAndroid/backup"
-    # Replace the .bashrc file with the new one
-    cp -v "$HOME/VSCodeOnAndroid/bash.bashrc" "/data/data/com.termux/files/usr/etc/bash.bashrc"
-else
-    echo -e "\033[31mCustom .bashrc not found. Please ensure VSCodeOnAndroid is cloned correctly.\033[0m"
-    exit 1
-fi
-
-# Installation script complete message in blue
-echo -e "\033[34mInstallation script complete. Please type 'exit' and press Enter to close the Termux session.\033[0m"
-
 # Function to display the installation menu
 show_installation_menu() {
     while true; do
@@ -282,6 +250,36 @@ show_installation_menu() {
     done
 }
 
+# Add Keyboard Shortcuts to Code Server
+echo -e "\033[34mAdding Keyboard Shortcuts...\033[0m"
+mkdir -p ~/.local/share/code-server/User
+echo '{
+  "keyboard.dispatch": "keyCode"
+}' > ~/.local/share/code-server/User/settings.json
+
+
+# Ensure the backup directory exists
+mkdir -p "$HOME/VSCodeOnAndroid/backup"
+
+# Check if the custom .bashrc exists before copying
+if [ -f "$HOME/VSCodeOnAndroid/bash.bashrc" ]; then
+    # Backup the current .bashrc file
+    cp -v "/data/data/com.termux/files/usr/etc/bash.bashrc" "$HOME/VSCodeOnAndroid/backup"
+    # Replace the .bashrc file with the new one
+    cp -v "$HOME/VSCodeOnAndroid/bash.bashrc" "/data/data/com.termux/files/usr/etc/bash.bashrc"
+else
+    echo -e "\033[31mCustom .bashrc not found. Please ensure VSCodeOnAndroid is cloned correctly.\033[0m"
+    exit 1
+fi
+
 if [ "$1" == "menu" ]; then
     show_installation_menu
+else
+# Call the function to prompt for language installations
+prompt_for_languages
+
+# Call the function to prompt for database installations
+prompt_for_databases
+# Installation script complete message in blue
+echo -e "\033[34mInstallation script complete. Please type 'exit' and press Enter to close the Termux session.\033[0m"
 fi
