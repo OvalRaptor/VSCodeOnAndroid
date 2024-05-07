@@ -36,14 +36,17 @@ wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 chmod +x dotnet-install.sh
 
 # Install .NET SDK for arm64
-./dotnet-install.sh --version 6.0.100 --architecture arm64
+./dotnet-install.sh --version 6.0.100 --architecture arm64 --install-dir "$HOME/.dotnet"
 
 # Add .NET SDK to PATH for all future sessions
 echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.profile
 echo 'export DOTNET_GCHeapHardLimit=700000000' >> ~/.profile
 
+# Apply the changes to the current session
+source ~/.profile
+
 # Verify .NET installation
-dotnet --version
+$HOME/.dotnet/dotnet --version
 
 }
 
