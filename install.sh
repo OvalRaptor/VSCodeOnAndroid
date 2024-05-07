@@ -246,4 +246,41 @@ fi
 # Installation script complete message in blue
 echo -e "\033[34mInstallation script complete. Please type 'exit' and press Enter to close the Termux session.\033[0m"
 
+# Function to display the installation menu
+show_installation_menu() {
+    while true; do
+        echo -e "\033[34mSelect an option to install:\033[0m"
+        echo "1) C#"
+        echo "2) Python"
+        echo "3) JavaScript"
+        echo "4) Java"
+        echo "5) PHP"
+        echo "6) Ruby"
+        echo "7) Go"
+        echo "8) Rust"
+        echo "9) MariaDB"
+        echo "10) PostgreSQL"
+        echo "11) MongoDB"
+        echo "12) Exit"
+        read -p "Enter option: " option
 
+        case $option in
+            1) install_csharp ;;
+            2) install_python ;;
+            3) install_javascript ;;
+            4) install_java ;;
+            5) install_php ;;
+            6) install_ruby ;;
+            7) install_go ;;
+            8) install_rust ;;
+            9) install_mariadb ;;
+            10) install_postgresql ;;
+            11) install_mongodb ;;
+            12) echo "Exiting installation menu."; break ;;
+            *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
+        esac
+    done
+}
+
+# Call the installation menu function
+show_installation_menu
