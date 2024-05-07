@@ -9,65 +9,6 @@ error_handler() {
 # Trap any errors
 trap 'error_handler' ERR
 
-# Function to display the installation menu
-show_installation_menu() {
-    while true; do
-        echo -e "\033[34mSelect an option to install:\033[0m"
-        echo "1) C#"
-        echo "2) Python"
-        echo "3) JavaScript"
-        echo "4) Java"
-        echo "5) PHP"
-        echo "6) Ruby"
-        echo "7) Go"
-        echo "8) Rust"
-        echo "9) MariaDB"
-        echo "10) PostgreSQL"
-        echo "11) MongoDB"
-        echo "12) Exit"
-        read -p "Enter option: " option
-
-        case $option in
-            1) install_csharp ;;
-            2) install_python ;;
-            3) install_javascript ;;
-            4) install_java ;;
-            5) install_php ;;
-            6) install_ruby ;;
-            7) install_go ;;
-            8) install_rust ;;
-            9) install_mariadb ;;
-            10) install_postgresql ;;
-            11) install_mongodb ;;
-            12) echo "Exiting installation menu."; break ;;
-            *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
-        esac
-    done
-}
-
-if [ "$1" == "menu" ]; then
-    show_installation_menu
-    exit 0
-fi
-
-# Welcome message in blue
-echo -e "\033[34mWelcome to the interactive VSCode on Android installation.\033[0m"
-
-# Install tur-repo and update package lists in blue
-echo -e "\033[34mSetting up tur-repo and updating package lists...\033[0m"
-apt-get update -y && apt-get upgrade -y && apt-get install -y tur-repo
-
-# Ensure tur-repo is ready before continuing, in blue
-if [ "$(apt list --upgradable | grep tur-repo)" ]; then
-    echo -e "\033[34mtur-repo is not ready. Please try running the script again later.\033[0m"
-    exit 1
-fi
-
-# Proceed with the rest of the installations in blue
-echo -e "\033[34mInstalling code server and dependencies on Termux...\033[0m"
-apt-get install -y build-essential gdb binutils pkg-config code-server
-
-
 # Define function to append database startup scripts to bash.bashrc
 append_to_bashrc() {
     # Use 'cat' with a heredoc to append multiline text
@@ -173,6 +114,64 @@ if ! pgrep -x \"mongod\" > /dev/null; then
 fi"
 }
 
+# Function to display the installation menu
+show_installation_menu() {
+    while true; do
+        echo -e "\033[34mSelect an option to install:\033[0m"
+        echo "1) C#"
+        echo "2) Python"
+        echo "3) JavaScript"
+        echo "4) Java"
+        echo "5) PHP"
+        echo "6) Ruby"
+        echo "7) Go"
+        echo "8) Rust"
+        echo "9) MariaDB"
+        echo "10) PostgreSQL"
+        echo "11) MongoDB"
+        echo "12) Exit"
+        read -p "Enter option: " option
+
+        case $option in
+            1) install_csharp ;;
+            2) install_python ;;
+            3) install_javascript ;;
+            4) install_java ;;
+            5) install_php ;;
+            6) install_ruby ;;
+            7) install_go ;;
+            8) install_rust ;;
+            9) install_mariadb ;;
+            10) install_postgresql ;;
+            11) install_mongodb ;;
+            12) echo "Exiting installation menu."; break ;;
+            *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
+        esac
+    done
+}
+
+if [ "$1" == "menu" ]; then
+    show_installation_menu
+    exit 0
+fi
+
+# Welcome message in blue
+echo -e "\033[34mWelcome to the interactive VSCode on Android installation.\033[0m"
+
+# Install tur-repo and update package lists in blue
+echo -e "\033[34mSetting up tur-repo and updating package lists...\033[0m"
+apt-get update -y && apt-get upgrade -y && apt-get install -y tur-repo
+
+# Ensure tur-repo is ready before continuing, in blue
+if [ "$(apt list --upgradable | grep tur-repo)" ]; then
+    echo -e "\033[34mtur-repo is not ready. Please try running the script again later.\033[0m"
+    exit 1
+fi
+
+# Proceed with the rest of the installations in blue
+echo -e "\033[34mInstalling code server and dependencies on Termux...\033[0m"
+apt-get install -y build-essential gdb binutils pkg-config code-server
+
 prompt_for_languages() {
     echo -e "\033[34mEnter the numbers of the programming languages you want to install, separated by spaces, or enter 'None' to skip:\033[0m"
     echo "1) C#"
@@ -219,7 +218,6 @@ prompt_for_languages() {
         esac
     done
 }
-
 
 # Function to prompt the user for multiple database installations
 prompt_for_databases() {
