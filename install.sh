@@ -282,5 +282,6 @@ show_installation_menu() {
     done
 }
 
-# Call the installation menu function
-show_installation_menu
+if [ "$1" == "menu" ]; then
+    show_installation_menu
+fi
