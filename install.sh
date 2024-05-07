@@ -120,92 +120,92 @@ install_mongodb() {
     append_to_bashrc "# Start MongoDB\nif ! pgrep -x \"mongod\" > /dev/null; then\n    mongod --dbpath /data/data/com.termux/files/usr/var/lib/mongodb > /data/data/com.termux/files/usr/var/lib/mongodb/mongod.log 2>&1 &\nfi\n"
 }
 
-# Interactive menu for the user to choose which languages to install
-echo -e "\033[34mPlease select the programming languages you want to install:\033[0m"
-echo "1) C#"
-echo "2) Python"
-echo "3) JavaScript"
-echo "4) Java"
-echo "5) PHP"
-echo "6) Ruby"
-echo "7) Go"
-echo "8) Rust"
-echo "9) All"
-read -p "Enter option: " lang_option
+# Function to prompt the user for multiple language installations
+prompt_for_languages() {
+    echo -e "\033[34mEnter the numbers of the programming languages you want to install, separated by spaces:\033[0m"
+    echo "1) C#"
+    echo "2) Python"
+    echo "3) JavaScript"
+    echo "4) Java"
+    echo "5) PHP"
+    echo "6) Ruby"
+    echo "7) Go"
+    echo "8) Rust"
+    echo "9) All"
+    read -p "Enter options: " input
 
-case $lang_option in
-    1)
-        install_csharp
-        ;;
-    2)
-        install_python
-        ;;
-    3)
-        install_javascript
-        ;;
-    4)
-        install_java
-        ;;
-    5)
-        install_php
-        ;;
-    6)
-        install_ruby
-        ;;
-    7)
-        install_go
-        ;;
-    8)
-        install_rust
-        ;;
-    9)
-        install_csharp
-        install_python
-        install_javascript
-        install_java
-        install_php
-        install_ruby
-        install_go
-        install_rust
-        ;;
-    *)
-        echo -e "\033[31mInvalid option selected. Exiting.\033[0m"
-        exit 1
-        ;;
-esac
+    # Split the input into an array of numbers
+    IFS=' ' read -ra options <<< "$input"
 
-# Interactive menu for the user to choose which databases to install
-echo -e "\033[34mPlease select the databases you want to install:\033[0m"
-echo "1) MariaDB"
-echo "2) PostgreSQL"
-echo "3) MongoDB"
-echo "4) All"
-echo "5) None"
-read -p "Enter option: " db_option
+    # Process each option
+    for option in "${options[@]}"; do
+        if [ "$option" = "9" ]; then
+            # If the user selects 'All', install all languages
+            install_csharp
+            install_python
+            install_javascript
+            install_java
+            install_php
+            install_ruby
+            install_go
+            install_rust
+            break
+        else
+            case $option in
+                1) install_csharp ;;
+                2) install_python ;;
+                3) install_javascript ;;
+                4) install_java ;;
+                5) install_php ;;
+                6) install_ruby ;;
+                7) install_go ;;
+                8) install_rust ;;
+                *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
+            esac
+        fi
+    done
+}
 
-case $db_option in
-    1)
-        install_mariadb
-        ;;
-    2)
-        install_postgresql
-        ;;
-    3)
-        install_mongodb
-        ;;
-    4)
-        install_mariadb
-        install_postgresql
-        install_mongodb
-        ;;
-    5)
-        echo -e "\033[34mNo databases will be installed.\033[0m"
-        ;;
-    *)
-        echo -e "\033[31mInvalid option selected. Exiting.\033[0m"
-        exit 1
-        ;;
-esac
+# Function to prompt the user for multiple database installations
+prompt_for_databases() {
+    echo -e "\033[34mEnter the numbers of the databases you want to install, separated by spaces:\033[0m"
+    echo "1) MariaDB"
+    echo "2) PostgreSQL"
+    echo "3) MongoDB"
+    echo "4) All"
+    echo "5) None"
+    read -p "Enter options: " input
+
+    # Split the input into an array of numbers
+    IFS=' ' read -ra options <<< "$input"
+
+    # Process each option
+    for option in "${options[@]}"; do
+        if [ "$option" = "4" ]; then
+            # If the user selects 'All', install all databases
+            install_mariadb
+            install_postgresql
+            install_mongodb
+            break
+        elif [ "$option" = "5" ]; then
+            echo -e "\033[34mNo databases will be installed.\033[0m"
+            break
+        else
+            case $option in
+                1) install_mariadb ;;
+                2) install_postgresql ;;
+                3) install_mongodb ;;
+                *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
+            esac
+        fi
+    done
+}
+
+# Call the function to prompt for language installations
+prompt_for_languages
+
+# Call the function to prompt for database installations
+prompt_for_databases
 
 # Add Keyboard Shortcuts to Code Server
 echo -e "\033[34mAdding Keyboard Shortcuts...\033[0m"
