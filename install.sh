@@ -29,22 +29,28 @@ install_csharp() {
     fi
 
     echo -e "\033[34mInstalling C# development tools...\033[0m"
-# Download the .NET SDK installation script
-wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
+    # Download the .NET SDK installation script
+    wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
 
-# Make sure the script is executable
-chmod +x dotnet-install.sh
+    # Make sure the script is executable
+    chmod +x dotnet-install.sh
 
-# Install .NET SDK for arm64
-./dotnet-install.sh --version 6.0.100 --architecture arm64 --install-dir "$HOME/.dotnet"
+    # Install .NET SDK for arm64
+    ./dotnet-install.sh --version 6.0.100 --architecture arm64 --install-dir "$HOME/.dotnet"
 
-# Add .NET SDK to PATH for all future sessions
-echo 'export PATH=$HOME/.dotnet' >> /data/data/com.termux/files/usr/etc/bash.bashrc
-echo 'export DOTNET_GCHeapHardLimit=700000000' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+    # Add .NET SDK to PATH for all future sessions
+    echo 'export PATH=$HOME/.dotnet:$PATH' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+    echo 'export DOTNET_GCHeapHardLimit=700000000' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 
-# Verify .NET installation
-$HOME/.dotnet/dotnet --version
+    # Source the bash.bashrc to update PATH for the current session
+    source /data/data/com.termux/files/usr/etc/bash.bashrc
 
+    # Verify .NET installation
+    if [ -f "$HOME/.dotnet/dotnet" ]; then
+        $HOME/.dotnet/dotnet --version
+    else
+        echo -e "\033[31mThe .NET executable was not found. Please check the installation.\033[0m"
+    fi
 }
 
 # Function to install Python related packages
