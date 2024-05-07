@@ -132,9 +132,8 @@ if ! pgrep -x \"mongod\" > /dev/null; then
 fi"
 }
 
-# Function to prompt the user for multiple language installations
 prompt_for_languages() {
-    echo -e "\033[34mEnter the numbers of the programming languages you want to install, separated by spaces:\033[0m"
+    echo -e "\033[34mEnter the numbers of the programming languages you want to install, separated by spaces, or enter 'None' to skip:\033[0m"
     echo "1) C#"
     echo "2) Python"
     echo "3) JavaScript"
@@ -144,6 +143,7 @@ prompt_for_languages() {
     echo "7) Go"
     echo "8) Rust"
     echo "9) All"
+    echo "10) None"
     read -p "Enter options: " input
 
     # Split the input into an array of numbers
@@ -151,32 +151,34 @@ prompt_for_languages() {
 
     # Process each option
     for option in "${options[@]}"; do
-        if [ "$option" = "9" ]; then
-            # If the user selects 'All', install all languages
-            install_csharp
-            install_python
-            install_javascript
-            install_java
-            install_php
-            install_ruby
-            install_go
-            install_rust
-            break
-        else
-            case $option in
-                1) install_csharp ;;
-                2) install_python ;;
-                3) install_javascript ;;
-                4) install_java ;;
-                5) install_php ;;
-                6) install_ruby ;;
-                7) install_go ;;
-                8) install_rust ;;
-                *) echo -e "\033[31mInvalid option: $option\033[0m" ;;
-            esac
-        fi
+        case $option in
+            1) install_csharp ;;
+            2) install_python ;;
+            3) install_javascript ;;
+            4) install_java ;;
+            5) install_php ;;
+            6) install_ruby ;;
+            7) install_go ;;
+            8) install_rust ;;
+            9)
+                install_csharp
+                install_python
+                install_javascript
+                install_java
+                install_php
+                install_ruby
+                install_go
+                install_rust
+                ;;
+            10)
+                echo -e "\033[34mNo programming languages will be installed.\033[0m"
+                ;;
+            *)
+                echo -e "\033[31mInvalid option: $option\033[0m" ;;
+        esac
     done
 }
+
 
 # Function to prompt the user for multiple database installations
 prompt_for_databases() {
