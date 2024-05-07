@@ -170,7 +170,7 @@ fi
 
 # Proceed with the rest of the installations in blue
 echo -e "\033[34mInstalling code server and dependencies on Termux...\033[0m"
-apt-get install -y build-essential gdb binutils pkg-config code-server
+apt-get install -y build-essential gdb binutils wget pkg-config code-server
 
 prompt_for_languages() {
     echo -e "\033[34mEnter the numbers of the programming languages you want to install, separated by spaces, or enter 'None' to skip:\033[0m"
