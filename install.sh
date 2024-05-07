@@ -43,7 +43,7 @@ echo 'export PATH=$PATH:$HOME/.dotnet' >> /data/data/com.termux/files/usr/etc/ba
 echo 'export DOTNET_GCHeapHardLimit=700000000' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 
 # Apply the changes to the current session
-source ~/.profile
+source /data/data/com.termux/files/usr/etc/bash.bashrc
 
 # Verify .NET installation
 $HOME/.dotnet/dotnet --version
