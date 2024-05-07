@@ -29,15 +29,22 @@ install_csharp() {
     fi
 
     echo -e "\033[34mInstalling C# development tools...\033[0m"
-    # Install .NET SDK for arm64
-    wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
-    bash dotnet-install.sh --version 6.0.100 --architecture arm64
-    echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.profile
-    echo 'export DOTNET_GCHeapHardLimit=700000000' >> ~/.profile
-    source ~/.profile
-    # Verify .NET installation
-    dotnet --version
-}
+# Download the .NET SDK installation script
+wget https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.sh
+
+# Make sure the script is executable
+chmod +x dotnet-install.sh
+
+# Install .NET SDK for arm64
+./dotnet-install.sh --version 6.0.100 --architecture arm64
+
+# Add .NET SDK to PATH for all future sessions
+echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.profile
+echo 'export DOTNET_GCHeapHardLimit=700000000' >> ~/.profile
+
+# Verify .NET installation
+dotnet --version
+
 
 # Function to install Python related packages
 install_python() {
