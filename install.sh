@@ -39,7 +39,7 @@ chmod +x dotnet-install.sh
 ./dotnet-install.sh --version 6.0.100 --architecture arm64 --install-dir "$HOME/.dotnet"
 
 # Add .NET SDK to PATH for all future sessions
-echo 'export PATH=$PATH:$HOME/.dotnet' >> /data/data/com.termux/files/usr/etc/bash.bashrc
+echo 'export PATH=$HOME/.dotnet' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 echo 'export DOTNET_GCHeapHardLimit=700000000' >> /data/data/com.termux/files/usr/etc/bash.bashrc
 
 # Verify .NET installation
