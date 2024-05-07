@@ -77,11 +77,13 @@ Once the installation is complete exit termux by typing "exit" and press enter. 
 
 # Extensions
 
-Some extensions may not be compatible with android, even though they are installable, and will not work. To get around this try to find your extension on open vsx and download the .vsix.
+Some extensions may not be compatible with android, even though they are installable, and will not work. 
+
+Open Vsx can be used to find and install extensions.
 
 https://open-vsx.org/
 
-You can then install these extensions by following the video below:
+You can then install these .vsix files by following the video below:
 
 ![1000123311](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/47428b29-8aab-461b-9f65-49ab6dc65d7f)
 
