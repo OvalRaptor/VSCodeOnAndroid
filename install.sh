@@ -45,6 +45,7 @@ echo 'export DOTNET_GCHeapHardLimit=700000000' >> ~/.profile
 # Verify .NET installation
 dotnet --version
 
+}
 
 # Function to install Python related packages
 install_python() {
