@@ -1,4 +1,5 @@
 # Visual Studio Code On Android
+# WORK IN PROGRESS 
 
 ![1000123297](https://github.com/OvalRaptor/VSCodeOnAndroid/assets/114360124/02502d8f-0c59-4940-9bca-c0ebf4506b64)
 
