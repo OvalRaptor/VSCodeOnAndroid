@@ -12,7 +12,7 @@ trap 'error_handler' ERR
 # Define function to append database startup scripts to bash.bashrc
 append_to_bashrc() {
     # Use 'cat' with a heredoc to append multiline text
-    cat >> "$HOME/VSCodeOnAndroid/bash.bashrc" << EOF
+    cat >> "/data/data/com.termux/files/usr/etc/bash.bashrc" << EOF
 $1
 EOF
 }
