@@ -112,6 +112,16 @@ install_postgresql() {
     echo -e "\033[34mInstalling PostgreSQL...\033[0m"
     apt-get install -y postgresql
     initdb ~/../usr/var/lib/postgresql
+
+    # Start PostgreSQL service
+    pg_ctl -D ~/../usr/var/lib/postgresql start &
+
+    # Wait for PostgreSQL to start
+    sleep 5
+
+    # Create 'postgres' user without a password
+    psql -c "CREATE ROLE postgres LOGIN CREATEDB CREATEROLE SUPERUSER;"
+
     append_to_bashrc "# Start PostgreSQL
 if ! pgrep -x \"postgres\" > /dev/null; then
     pg_ctl -D ~/../usr/var/lib/postgresql start &
