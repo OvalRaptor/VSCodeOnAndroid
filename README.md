@@ -26,7 +26,6 @@ While Code Server supports most VS Code extensions, some may not work properly d
 ### Programming Languages:
 
 C/C++: With build-essential and gdb for building and debugging. 
-#### (.NET is a pain in the arse, still trying to get it working so refrain from using option 1(C#) )
 
 Python: Both python (Python 3.x) and python2 (Python 2.x) are included.
 
