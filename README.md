@@ -70,7 +70,7 @@ Git: For version control and collaboration.
    
 3. Once both apks are installed, copy the script below to begin the installation. Make sure you allow termux storage permissions when it prompts you.
 ```
-apt update && apt upgrade -o Dpkg::Options::="--force-confnew" -y && termux-setup-storage && sleep 5 && apt update && apt install git -y && git clone https://github.com/OvalRaptor/VSCodeOnAndroid.git && cd VSCodeOnAndroid && chmod +x install.sh && ./install.sh
+apt update && apt upgrade -o Dpkg::Options::="--force-confnew" -y && termux-setup-storage && sleep 5 && apt update && apt install git -y && git clone https://github.com/Aakashraj24/VSCodeOnAndroid.git && cd VSCodeOnAndroid && chmod +x install.sh && ./install.sh
 
 ```
 
